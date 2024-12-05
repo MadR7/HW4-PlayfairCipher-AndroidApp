@@ -27,12 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Button clearKeyButton = findViewById(R.id.clearKeyButton);
         Button encryptButton = findViewById(R.id.encryptButton);
         Button decryptButton = findViewById(R.id.decryptButton);
-
+        Button clearButton = findViewById(R.id.clearButton);
         // Set click listeners
         generateKeyButton.setOnClickListener(v -> generateKey());
         clearKeyButton.setOnClickListener(v -> clearKey());
         encryptButton.setOnClickListener(v -> encrypt());
         decryptButton.setOnClickListener(v -> decrypt());
+        clearButton.setOnClickListener(v -> clearText());
     }
 
     private void generateKey() {
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         keyTable = null;
         keyPhraseInput.setText("");
         keyTableDisplay.setText("");
+    }
+
+    private void clearText(){
+        messageInput.setText("");
     }
 
     private void displayKeyTable() {
